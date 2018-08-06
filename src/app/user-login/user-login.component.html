@@ -9,25 +9,25 @@
      <div class="row justify-content-center formRow">
       <div class="col-md-5">
       <div class="text-center">
-        <form class="formStyle">
+        <form #f="ngForm" class="formStyle">
           <div class="input-group mb-3">
             <div class="input-group-prepend">
               <span class="input-group-text" id="basic-addon1"><img src="../../assets/icons/user_icon.svg" class="userIcon"/></span>
             </div>
-            <input type="text" class="form-control" placeholder="USERNAME" aria-label="Username" aria-describedby="basic-addon1">
+            <input type="text" class="form-control" placeholder="USERNAME" name="Email" ngModel aria-label="Username" aria-describedby="basic-addon1">
           </div>
           <div class="input-group mb-3">
             <div class="input-group-prepend">
               <span class="input-group-text" id="basic-addon1"><img src="../../assets/icons/lock_icon.svg" class="userIcon"/></span>
             </div>
-            <input type="text" class="form-control" placeholder="PASSWORD" aria-label="Password" aria-describedby="basic-addon2">
+            <input class="form-control" type="password" placeholder="PASSWORD" name="Password" ngModel aria-label="Password" aria-describedby="basic-addon2">
           </div>
         </form>
-        <div *ngIf="loginErrMsg != ''" class="text-center errorMsgStyle">
+        <div *ngIf="loginErrMsg != ''" class="text-center errorMsgStyle alert alert-danger">
           {{loginErrMsg}}
         </div>
         <div text-center>
-          <button (click)="logUserIn()" class="logInBtn" ion-button primary type="submit">Sign In</button>
+          <button (click)="logUserIn(f)" class="logInBtn" ion-button primary type="submit">Sign In</button>
         </div>
         <div text-center>
           <button class="registerBtn" ion-button color="light" type="button" round routerLink="startRegister">Create Account</button>
