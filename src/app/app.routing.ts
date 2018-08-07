@@ -4,7 +4,9 @@ import { UserRegisterTypeComponent } from "./user-register-type/user-register-ty
 import { UserRegisterAuthInfoComponent } from "./user-register-auth-info/user-register-auth-info.component";
 import { EventsAllComponent } from "./events-all/events-all.component";
 import { HomeComponent } from "./home/home.component";
+import { GetCivicdComponent } from "./get-civicd/get-civicd.component";
 import { AuthorizationGuard } from "./services/authorization.guard";
+
 
 
 
@@ -28,6 +30,11 @@ export const routes: Routes = [
     path: "allevents",
     canActivate: [AuthorizationGuard],
     component: EventsAllComponent
+  },
+  {
+    path: "getcivicd",
+    canActivate: [AuthorizationGuard],
+    component: GetCivicdComponent
   },
   {
     path: "registrationfirststep",
