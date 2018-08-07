@@ -1,0 +1,11 @@
+<div class="navWrap">
+  <img class="logoStyle" src="../../assets/images/civicd_logo_full_white.svg" alt="Civicd Logo" />
+</div>
+  <div class="btnWrapDiv">
+    <div class="btn-group">
+      <button [ngClass]="{activeBtn: homePage.active}"  routerLink="/home" type="button" class="btnStyle">Home</button>
+      <button [ngClass]="{activeBtn: eventsPage.active}" routerLink="/allevents" type="button" class="btnStyle">Events</button>
+      <button [ngClass]="{activeBtn: getCivicdPage.active}" routerLink="/getcivicd" type="button" class="btnStyle">Get Civic'd</button>
+      <button type="button" class="btnStyle">Log Out</button>
+    </div>
+  </div>

@@ -33,7 +33,7 @@ export class UserLoginComponent {
       (data: any) => {
         console.log(data);
         this.tokenManagerService.createToken(data);
-        this.router.navigate(["/registrationfirststep"]);
+        this.router.navigate(["/home"]);
         //***** THIS IS AUTH CODE TO PUT IN WHEN THE USER CONTROLLER IS SET UP IN THE API
       //   this.userApiService.getUserInfo(data.userName)
       //   .subscribe(
