@@ -63,8 +63,11 @@
           <div class="form-group">
             <app-user-register-interests></app-user-register-interests>
           </div>
+          <div *ngIf="errMsg != ''" class="alert alert-danger text-center">
+            {{errMsg}}
+          </div>
           <div class="text-center">
-            <button class="btn submitBtnStyle" (click)="submitUserInfo(f)">Submit</button>
+            <button [disabled]="submitBtnInfo === 'Please wait...'" class="btn submitBtnStyle" (click)="submitUserInfo(f)">{{submitBtnInfo}}</button>
           </div>
         </form>
         <br />

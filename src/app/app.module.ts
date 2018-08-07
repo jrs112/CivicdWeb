@@ -14,6 +14,8 @@ import { TokenManagerService } from "./services/token-manager.service";
 import { AuthorizationGuard } from "./services/authorization.guard";
 import { TagsApiService } from "./services/tags-api.service";
 import { HomeComponent } from './home/home.component';
+import { NavbarDefaultComponent } from './navbar-default/navbar-default.component';
+import { EventsAllComponent } from './events-all/events-all.component';
 
 
 @NgModule({
@@ -23,7 +25,9 @@ import { HomeComponent } from './home/home.component';
     UserRegisterAuthInfoComponent,
     UserRegisterTypeComponent,
     UserRegisterInterestsComponent,
-    HomeComponent
+    HomeComponent,
+    NavbarDefaultComponent,
+    EventsAllComponent
   ],
   imports: [
     BrowserModule,

@@ -29,6 +29,8 @@ export class UserRegisterAuthInfoComponent implements OnInit {
 
   portfolioPic = "assets/imgs/default_portfolio.png"
   imageLoad = false;
+  errMsg = "";
+  submitBtnInfo = "Submit";
 
 
 
@@ -44,6 +46,7 @@ export class UserRegisterAuthInfoComponent implements OnInit {
   }
 
   submitUserInfo(form) {
+    this.submitBtnInfo = "Please wait..."
     let value = form.value;
     value.Tags = this.selectedTagArr;
     this.userApiService.createUser(value)
@@ -56,15 +59,19 @@ export class UserRegisterAuthInfoComponent implements OnInit {
             console.log("SUCCES LOGGING IN USER", info);
             this.tokenManagerService.createToken(info);
             this.router.navigate(["home"])
-
           },
           (error) => {
+            this.submitBtnInfo = "Submit";
             console.log("error logging in user", error);
             this.router.navigate(["signin"]);
-          } 
+          }
         )
       },
-      (err) => console.log("there was an error creating user", err)
+      (err) => {
+        console.log("there was an error creating user", err);
+        this.errMsg = "Something went wrong please try again or contact ouremail@gmail.com";
+
+      }
     )
   }
 

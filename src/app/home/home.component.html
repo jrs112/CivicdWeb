@@ -1,3 +1,52 @@
-<p>
-  home works!
-</p>
+  <app-navbar-default></app-navbar-default>
+<div class="container-fluid">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <h1 class="sectionHead">Civic'd Profile</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6">
+        <div>
+          <img class="imgStyle" [src]="portfolioPic">
+        </div>
+      </div>
+      <div class="col-6 text-center">
+        <div class="userNameHead"><strong>{{userInfo?.DisplayName}}</strong></div>
+        <div class="addressHead">{{userInfo?.City}}, {{userInfo?.State}}</div>
+        <div class="checkedInBox text-center">
+          <div>{{checkedInAmt}} Times</div>
+          <div>Check'd In</div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <h1 class="sectionHead">About</h1>
+        <div *ngIf="userInfo?.ProfileDescription != '' && userInfo?.ProfileDescription != null">
+          <p class="aboutPara">
+            {{userInfo?.ProfileDescription}}
+          </p>
+        </div>
+        <div *ngIf="userInfo?.ProfileDescription === '' || userInfo?.ProfileDescription === null">
+          <p class="aboutPara">
+            Tell other members about yourself by updating your about section.
+          </p>
+        </div>
+        <h1 class="sectionHead">Interest</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-4 text-center">
+        <div *ngFor="let tags of firstColArr"><span class="badge tagStyle"><strong>#{{tags?.Name}}</strong></span></div>
+      </div>
+      <div class="col-4 text-center">
+        <div *ngFor="let tags of secondColArr"><span class="badge tagStyle"><strong>#{{tags?.Name}}</strong></span></div>
+      </div>
+      <div class="col-4 text-center">
+        <div *ngFor="let tags of thirdColArr"><span class="badge tagStyle"><strong>#{{tags?.Name}}</strong></span></div>
+      </div>
+    </div>
+  </div>
+</div>
