@@ -4,7 +4,9 @@
 }
 .container-fluid {
   background: linear-gradient(rgba(231,231,233,173), rgba(177,195,212,255));
-  height: 100vh;
+  background-size: cover;
+  min-height: 100vh;
+  height: 100%;
 }
   .sectionHead {
     color: rgb(76,141,202);
@@ -26,4 +28,5 @@
   }
   .bottomCalendar {
     margin-top: 2rem;
+    margin-bottom: 5rem;
   }

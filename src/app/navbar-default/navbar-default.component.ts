@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { UserApiService } from "../services/user-api.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-navbar-default',
@@ -20,7 +22,7 @@ getCivicdPage = {
   url: "getcivicd"
 }
 
-  constructor() { }
+  constructor(private userApiService: UserApiService, private router: Router) { }
 
 
   ngOnInit() {
@@ -36,6 +38,19 @@ getCivicdPage = {
       this.getCivicdPage.active = true;
     }
 
+  }
+
+  logOut() {
+    this.userApiService.logOutUser()
+    .subscribe(
+      (data) => {
+        console.log("LOGGED OUT", data);
+        this.router.navigate(["/signin"])
+        localStorage.clear();
+      },
+      (err) => console.log("there was an error logging out", err)
+      
+    )
   }
 
 }

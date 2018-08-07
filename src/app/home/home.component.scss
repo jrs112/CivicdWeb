@@ -17,7 +17,10 @@
 
 .container-fluid {
   background: linear-gradient(rgba(231,231,233,173), rgba(177,195,212,255));
-  height: 100vh;
+  background-size: cover;
+  min-height: 100vh;
+  height: 100%;
+
 }
 
   .imgStyle {
@@ -65,7 +68,7 @@
       font-size: 3rem;
     }
     @include for-tablet-portrait-up {
-      font-size: 4rem;
+      font-size: 3.5rem;
     }
   }
   .userNameHead {
@@ -123,5 +126,3 @@
       font-size: 1.75rem;
     }
   }
-
-  
