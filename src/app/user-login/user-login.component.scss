@@ -33,14 +33,16 @@
 .logoStyle {
   height: auto;
   width: 55rem;
-  margin-top: 7rem;
+  margin-top: 1rem;
   margin-bottom: .5rem;
   @include for-phone-only {
       max-width: 20rem;
       margin-bottom: 2rem;
+      margin-top: 9rem;
     }
   @include for-tall-phone-only {
       max-width: 22rem;
+      margin-top: 8rem;
     }
   @include for-tablet-portrait-up {
     max-width: 40rem;
@@ -52,6 +54,7 @@
   }
 
   @include for-desktop-up {
+    margin-top: 5rem;
     max-width: 55rem;
 
   }
@@ -60,10 +63,10 @@
 .formStyle {
   margin-top: 5.5rem;
   @include for-phone-only {
-      margin-top: 4rem;
+      margin-top: 2rem;
     }
     @include for-tall-phone-only {
-        margin-top: 3rem;
+        margin-top: 2rem;
       }
       @include for-tablet-portrait-up {
         margin-top: 3rem;

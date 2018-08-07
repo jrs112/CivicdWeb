@@ -1,0 +1,32 @@
+.searchInputStyle {
+  border-style: solid;
+  border-width: 1px;
+  border-color: white;
+  border-radius: 25px;
+  padding: 1rem;
+  font-size: 1rem;
+  background: rgba(0,0,0,.0)
+}
+
+.tagSearchCardStyle {
+  padding: .5rem;
+  background: rgba(0,0,0,.25);
+  cursor: pointer;
+  font-family: sans-serif;
+  &:hover {
+    background: rgba(0,0,0,.0);
+    border-color: black;
+  }
+}
+.cancelSearchStyle {
+  color: red;
+  cursor: pointer;
+}
+
+.badgeStyle {
+  background: rgb(224,50,83);
+  color: white;
+  padding: .5rem;
+  margin: .5rem;
+  cursor: pointer;
+}
