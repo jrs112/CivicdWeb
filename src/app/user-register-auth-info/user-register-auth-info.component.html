@@ -1,3 +1,76 @@
-<p>
-  user-register-auth-info works!
-</p>
+<div class="container-fluid">
+  <div class="container">
+    <div class="row centerRow">
+      <div class="col text-center">
+        <img routerLink="/signin" class="logoStyle" src="../../assets/icons/small_hand_logo.svg" alt="Civicd Logo" />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <form #f="ngForm" class="formStyle">
+          <div class="form-group">
+            <input placeholder="EMAIL" class="inputStyle form-control" id="email" type="text" name="Email" ngModel email required #email="ngModel">
+            <div *ngIf="!email.valid && email.dirty">
+              <p class="error">
+                Not a valid a email
+              </p>
+            </div>
+          </div>
+          <div class="form-group">
+            <input placeholder="PASSWORD" class="inputStyle form-control" type="password" name="Password" ngModel id="password" minlength="4" required #password="ngModel">
+            <div *ngIf="!password.valid && password.dirty">
+              <p class="error">
+                Password must be 4 digits long
+              </p>
+            </div>
+          </div>
+          <div class="form-group">
+            <input placeholder="CONFIRM PASSWORD" (keyup)="checkPass(f.value.passwordTwo, f.value.Password)" class="inputStyle form-control" type="password" name="passwordTwo" ngModel id="passwordTwo" minlength="4" #passwordTwo="ngModel" required>
+            <div *ngIf="passwordTwo.dirty && !passMatch">
+              <p class="error">
+                The Passwords Must Match
+              </p>
+            </div>
+          </div>
+          <div class="form-group">
+            <input placeholder="FIRST NAME" class="inputStyle form-control" type="text" name="FirstName" ngModel id="FirstName" required>
+          </div>
+          <div class="form-group">
+            <input placeholder="LAST NAME" class="inputStyle form-control" type="text" name="LastName" ngModel id="LastName" required>
+          </div>
+          <div class="form-group">
+            <input placeholder="USER NAME" class="inputStyle form-control" type="text" name="DisplayName" ngModel id="DisplayName" required>
+          </div>
+          <div class="form-group">
+            <input placeholder="Street Address" class="inputStyle form-control" type="text" name="StreetAddressOne" ngModel id="StreetAddressOne" required>
+          </div>
+          <div class="form-group">
+            <input placeholder="Apt, Suite, ect." class="inputStyle form-control" type="text" name="StreetAddressTwo" ngModel id="StreetAddressTwo">
+          </div>
+          <div class="form-group">
+            <input placeholder="CITY" class="inputStyle form-control" type="text" name="City" ngModel id="City">
+          </div>
+          <div class="form-group">
+            <input placeholder="STATE" class="inputStyle form-control" type="text" name="State" ngModel id="State">
+          </div>
+          <div class="form-group">
+            <input placeholder="ZIP CODE" class="inputStyle form-control" type="text" name="ZipCode" ngModel id="ZipCode">
+          </div>
+          <div class="form-group">
+            <textarea placeholder="Tell other members about yourself..." class="inputStyle form-control" type="text" name="ProfileDescription" ngModel id="ProfileDescription" required></textarea>
+          </div>
+
+          <div class="form-group">
+            <app-user-register-interests></app-user-register-interests>
+          </div>
+          <div class="text-center">
+            <button class="btn submitBtnStyle" (click)="submitUserInfo(f)">Submit</button>
+          </div>
+        </form>
+        <br />
+        <br />
+        <br />
+      </div>
+    </div>
+  </div>
+</div>

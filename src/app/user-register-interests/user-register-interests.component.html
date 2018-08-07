@@ -1,0 +1,15 @@
+<div class="form-group">
+  <input
+          placeholder="ADD INTERESTS"
+          class="searchInputStyle form-control"
+          type="text"
+          [(ngModel)]="myInput"
+          (keyup)="onInput($event)"
+          (focus)="searchFocus()"
+          (blur)="blurSearch()">
+  <small class="cancelSearchStyle" *ngIf="searchArr.length > 0" (click)="cancelTagSearch()">Cancel</small>
+  <div class="card tagSearchCardStyle" *ngFor="let tag of searchArr" (click)="addTag(tag)">
+    <h5>#{{tag.Name}}</h5>
+  </div>
+  <span *ngFor="let addedTag of selectedTagsArr" class="badge badgeStyle" (click)="removeTag(addedTag)">#{{addedTag.Name}}</span>
+</div>
