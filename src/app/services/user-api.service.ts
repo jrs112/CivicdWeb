@@ -35,6 +35,13 @@ constructor(private http: HttpClient, private tokenManagerService: TokenManagerS
     return this.http.post("http://millennialsvote.azurewebsites.net/token", otherInfo, {headers: new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded')});
   }
 
+  logOutUser() {
+    let token = this.tokenManagerService.retrieveToken();
+    let bearToken = "bearer " + token;
+    let info = {};
+    return this.http.post("http://millennialsvote.azurewebsites.net/api/Account/Logout", info, {headers: new HttpHeaders({'Authorization': "Bearer " + token})});
+  }
+
 
   // getUserInfo(email) {
   //   let token = this.tokenManagerService.retrieveToken();

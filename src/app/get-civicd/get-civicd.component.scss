@@ -1,0 +1,32 @@
+
+  @mixin for-phone-only {
+  @media (max-width: 599px) and (max-height: 699px) { @content; }
+}
+.container-fluid {
+  background: linear-gradient(rgba(231,231,233,173), rgba(177,195,212,255));
+  background-size: cover;
+  min-height: 100vh;
+  height: 100%;
+}
+  .sectionHead {
+    color: rgb(76,141,202);
+    font-family: sans-serif;
+    font-weight: bold;
+    margin-top: 2rem;
+  }
+  .calendarIcon {
+    font-size: 7rem;
+  }
+  .electionHead {
+    font-size: 1.75rem;
+    @include for-phone-only {
+      font-size: 1.5rem;
+    }
+  }
+  .upperCalendar {
+    margin-top: 1rem;
+  }
+  .bottomCalendar {
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+  }

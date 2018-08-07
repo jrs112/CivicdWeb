@@ -16,6 +16,7 @@ import { TagsApiService } from "./services/tags-api.service";
 import { HomeComponent } from './home/home.component';
 import { NavbarDefaultComponent } from './navbar-default/navbar-default.component';
 import { EventsAllComponent } from './events-all/events-all.component';
+import { GetCivicdComponent } from './get-civicd/get-civicd.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { EventsAllComponent } from './events-all/events-all.component';
     UserRegisterInterestsComponent,
     HomeComponent,
     NavbarDefaultComponent,
-    EventsAllComponent
+    EventsAllComponent,
+    GetCivicdComponent
   ],
   imports: [
     BrowserModule,
