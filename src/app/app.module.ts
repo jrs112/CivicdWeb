@@ -11,6 +11,7 @@ import { UserRegisterInterestsComponent } from './user-register-interests/user-r
 import { FormsModule } from '@angular/forms';
 import { UserApiService } from "./services/user-api.service";
 import { TokenManagerService } from "./services/token-manager.service";
+import { AuthorizationGuard } from "./services/authorization.guard";
 import { TagsApiService } from "./services/tags-api.service";
 import { HomeComponent } from './home/home.component';
 
@@ -30,7 +31,7 @@ import { HomeComponent } from './home/home.component';
     FormsModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [UserApiService, TokenManagerService, TagsApiService],
+  providers: [UserApiService, TokenManagerService, TagsApiService, AuthorizationGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

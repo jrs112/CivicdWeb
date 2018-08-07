@@ -52,34 +52,14 @@ constructor(private http: HttpClient, private tokenManagerService: TokenManagerS
   }
 
   setUserInfo(info) {
-    this.userInfo = info;
+    this.userSubject.next(info)
   }
 
   returnUserInfo() {
     return this.userInfo;
   }
 
-  isLoggedIn() {
-    let testToken = this.tokenManagerService.retrieveToken();
-    console.log("token: ", testToken);
-    if (testToken == undefined || testToken === "invalid token found" || testToken === "no token found" ) {
-      return false;
-    } else {
-      this.getUserInfo()
-      .subscribe(
-        (data) => {
-          console.log("got user info", data);
-          this.userSubject.next(data);
-          return true
-        },
-        (err) => {
-          console.log("there was an error getting the user info", err)
-          return false;
-        }
-      )
 
-    }
-  }
 
 
 }

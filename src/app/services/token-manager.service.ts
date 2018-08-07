@@ -23,14 +23,19 @@ private tokenKey:string = 'app_token';
 
   private retrieve() {
       let storedToken = localStorage.getItem(this.tokenKey);
-      if(!storedToken) throw 'no token found';
+      // if(!storedToken) throw 'no token found';
       return storedToken;
   }
 
   public getUserFromToken() {
     let currentToken = JSON.parse(this.retrieve());
-    let tokenUser = currentToken.userName;
-    return tokenUser;
+    if(currentToken) {
+      let tokenUser = currentToken.userName;
+      return tokenUser;
+    } else {
+      return "none";
+    }
+
   }
 
 
@@ -39,11 +44,15 @@ private tokenKey:string = 'app_token';
       let currentTime:number = (new Date()).getTime(), token = null;
       try {
           let storedToken = JSON.parse(this.retrieve());
-          if(storedToken.expires < currentTime) throw 'invalid token found';
-          token = storedToken.access_token;
+          if(storedToken) {
+            if(storedToken.expires < currentTime) throw 'invalid token found';
+            token = storedToken.access_token;
+          }
+          
       }
       catch(err) {
-          console.error(err);
+          console.error("getting her", err);
+          return token;
       }
       return token;
 
