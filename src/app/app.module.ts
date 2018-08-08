@@ -17,6 +17,7 @@ import { HomeComponent } from './home/home.component';
 import { NavbarDefaultComponent } from './navbar-default/navbar-default.component';
 import { EventsAllComponent } from './events-all/events-all.component';
 import { GetCivicdComponent } from './get-civicd/get-civicd.component';
+import { AdminCreateOrgComponent } from './admin-create-org/admin-create-org.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { GetCivicdComponent } from './get-civicd/get-civicd.component';
     HomeComponent,
     NavbarDefaultComponent,
     EventsAllComponent,
-    GetCivicdComponent
+    GetCivicdComponent,
+    AdminCreateOrgComponent
   ],
   imports: [
     BrowserModule,

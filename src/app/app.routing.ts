@@ -4,6 +4,7 @@ import { UserRegisterTypeComponent } from "./user-register-type/user-register-ty
 import { UserRegisterAuthInfoComponent } from "./user-register-auth-info/user-register-auth-info.component";
 import { EventsAllComponent } from "./events-all/events-all.component";
 import { HomeComponent } from "./home/home.component";
+import { AdminCreateOrgComponent } from "./admin-create-org/admin-create-org.component";
 import { GetCivicdComponent } from "./get-civicd/get-civicd.component";
 import { AuthorizationGuard } from "./services/authorization.guard";
 
@@ -20,6 +21,10 @@ export const routes: Routes = [
   {
     path: "chooseregistration",
     component: UserRegisterTypeComponent
+  },
+  {
+    path: "adminregisterorg",
+    component: AdminCreateOrgComponent
   },
   {
     path: "home",
