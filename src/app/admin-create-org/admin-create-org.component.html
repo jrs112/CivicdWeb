@@ -1,0 +1,60 @@
+<div class="container-fluid">
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col text-center">
+        <h1>Add Organization</h1>
+        <button class="btn btn-danger" (click)="logUserOut()">Log Out</button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <form #f="ngForm" class="formStyle smallMarginTop">
+                <h6>Category</h6>
+                <select class="form-control selectInputStyle" name="Category" required ngModel>
+                  <option value="0">Regular User</option>
+                  <option value="1">Government</option>
+                  <option value="2">Educational</option>
+                  <option value="3">Volunteer</option>
+                  <option value="4">Neighborhood</option>
+                  <option value="5">Political</option>
+                  <option value="6">Cause</option>
+                </select>
+            <h6>Organization Name</h6>
+            <input class="inputStyle form-control" id="DisplayName" type="text" name="DisplayName" required ngModel>
+            <h6>First Name</h6>
+            <input class="inputStyle form-control" id="FirstName" type="text" name="FirstName" required ngModel>
+            <h6>Last Name</h6>
+            <input class="inputStyle form-control" id="LastName" type="text" name="LastName" required ngModel>
+            <h6>Email</h6>
+            <input class="inputStyle form-control" id="Email" type="email" name="Email" ngModel email required>
+            <h6>Password</h6>
+            <input class="inputStyle form-control" id="Password" type="text" name="Password" required ngModel>
+            <h6>Address</h6>
+            <input class="inputStyle form-control" id="StreetAddressOne" type="text" name="StreetAddressOne" ngModel >
+            <h6>Address Two</h6>
+            <input class="inputStyle form-control" id="StreetAddressTwo" type="text" name="StreetAddressTwo" ngModel>
+            <h6>City</h6>
+            <input class="inputStyle form-control" id="City" type="text" name="City" ngModel >
+            <h6>State</h6>
+            <input class="inputStyle form-control" id="State" type="text" name="State" ngModel >
+            <h6>Zip</h6>
+            <input class="inputStyle form-control" id="ZipCode" type="number" name="ZipCode" ngModel >
+            <h6>About Organization</h6>
+            <textarea class="inputStyle form-control" id="ProfileDescription" type="text" name="ProfileDescription" rows="5" ngModel ></textarea>
+          </form>
+          <app-user-register-interests></app-user-register-interests>
+          <div class="alert alert-success text-center" *ngIf="succMsg != ''" text-center>
+            {{succMsg}}
+          </div>
+          <div class="alert alert-danger text-center" *ngIf="errMsg != ''" text-center>
+            {{errMsg}}
+          </div>
+          <div class="text-center">
+            <button [disabled]="submitBtnInfo === 'Please wait...'" type="button" class="btn btn-primary submitBtnStyle" (click)="createOrg(f)">{{submitBtnInfo}}</button>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
